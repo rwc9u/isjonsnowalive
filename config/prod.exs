@@ -65,3 +65,8 @@ config :logger, level: :info
 # which should be versioned separately.
 # handled by heroku
 # import_config "prod.secret.exs"
+config :isjonsnowalive, Isjonsnowalive.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 20,
+  ssl: true
